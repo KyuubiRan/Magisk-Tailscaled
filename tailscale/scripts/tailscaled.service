@@ -301,9 +301,9 @@ _coredns(){
         if ! [ -f "${coredns_bin}" ]; then
           log Info "Downloading Coredns.."
           arch=$(case "$(uname -m)" in aarch64|arm64) echo "arm64" ;; *) echo "arm" ;; esac)
-          busybox wget --no-check-certificate "https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/coredns-${arch}" -O "${coredns_bin}"
+          busybox wget --no-check-certificate "https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/coredns-${arch}" -O "${coredns_bin}"
           if ! [ -f "${coredns_bin}" ]; then
-            log Error "Download error, manual download coredns from https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/coredns-${arch} and extract to ${coredns_bin}"
+            log Error "Download error, manual download coredns from https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/coredns-${arch} and extract to ${coredns_bin}"
             return;
           fi
           chown root:net_bt_admin ${coredns_bin}
@@ -311,9 +311,9 @@ _coredns(){
         fi
         if ! [ -f "${coredns_conf}" ];then
           log Info "Downloading default config.."
-          busybox wget --no-check-certificate "https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/Corefile" -O "${coredns_conf}"
+          busybox wget --no-check-certificate "https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/Corefile" -O "${coredns_conf}"
           if ! [ -f "${coredns_conf}" ]; then
-            log Error "Download error, manual download Corefile from https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/Corefile and extract to ${coredns_conf}"
+            log Error "Download error, manual download Corefile from https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/Corefile and extract to ${coredns_conf}"
             return;
           fi
           log Info "config is located at ${coredns_conf}, you need take a look at the file and change it if needed, and restart the service after edit config"
@@ -406,9 +406,9 @@ _hevsocks(){
         if ! [ -f "${bin_file}" ]; then
           log Info "Downloading Hevsocks.."
           arch=$(case "$(uname -m)" in aarch64|arm64) echo "arm64" ;; *) echo "arm" ;; esac)
-          busybox wget --no-check-certificate "https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/hevsocks-${arch}" -O "${hevsocks_bin}"
+          busybox wget --no-check-certificate "https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/hevsocks-${arch}" -O "${hevsocks_bin}"
           if ! [ -f "${hevsocks_bin}" ]; then
-            log Error "Download error, manual download hevsocks from https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/hevsocks-${arch} and extract to ${hevsocks_bin}"
+            log Error "Download error, manual download hevsocks from https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/hevsocks-${arch} and extract to ${hevsocks_bin}"
             return;
           fi
           chown root:net_bt_admin ${bin_file}
@@ -416,9 +416,9 @@ _hevsocks(){
         fi
         if ! [ -f "${hevsocks_conf}" ];then
           log Info "Downloading default config.."
-          busybox wget --no-check-certificate "https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/hevsocks.yaml" -O "${hevsocks_conf}"
+          busybox wget --no-check-certificate "https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/hevsocks.yaml" -O "${hevsocks_conf}"
           if ! [ -f "${hevsocks_conf}" ]; then
-            log Error "Download error, manual download config from https://github.com/anasfanani/Magisk-Tailscaled/raw/main/files/hevsocks.yaml and extract to ${hevsocks_conf}"
+            log Error "Download error, manual download config from https://github.com/KyuubiRan/Magisk-Tailscaled/raw/main/files/hevsocks.yaml and extract to ${hevsocks_conf}"
             return;
           fi
           log Info "config is located at ${hevsocks_conf}, you need take a look at the file and change it if needed, and restart service after edit config"
